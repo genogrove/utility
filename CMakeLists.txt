@@ -1,3 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(genogrove_utility)
+
 # require at least C++17 - this has to be set in CMakeLists this is called from
 if(NOT CMAKE_CXX_STANDARD)
     message(STATUS "CMAKE_CXX_STANDARD not set - defaulting to C++20")
@@ -25,4 +28,8 @@ if(CMAKE_CXX_STANDARD LESS 20)
     target_link_libraries(genogrove_utility INTERFACE range-v3::range-v3)
 endif()
 
-
+# optionally include tests
+if(BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
