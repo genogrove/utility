@@ -16,7 +16,7 @@ target_include_directories(genogrove_utility INTERFACE
 )
 
 # if using c++17, link range-v3 library
-if(CMAKE_CXX_STANDARD LESS 20)
+if(CMAKE_CXX_STANDARD EQUAL 20)
     include(FetchContent)
     FetchContent_Declare(
             range-v3
